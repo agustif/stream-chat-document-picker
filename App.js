@@ -11,13 +11,16 @@ import {
   MessageInput,
 } from "stream-chat-expo";
 
+// require('dotenv').config();
+import { STREAM_CHAT_CLIENT, STREAM_CHAT_KEY } from 'react-native-dotenv'
+
 Reactotron
   .configure() // controls connection & communication settings
   .useReactNative() // add all built-in react native plugins
-  .connect() // let's connect!
+  .connect(); // let's connect!
 
-const chatClient = new StreamChat(process.env.STREAM_CHAT_CLIENT);
-const userToken = process.env.STREAM_CHAT_KEY;
+const chatClient = new StreamChat(STREAM_CHAT_CLIENT);
+const userToken = STREAM_CHAT_KEY;
 
 const user = {
   id: 'broad-fire-5',
